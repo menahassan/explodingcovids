@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>Board Page</title>
+        <link href="{% static 'board/styles.css' %}" rel="stylesheet">
     </head>
     <body>
-        <h1>Hello friends</h1>
+        <h1>Hello {{ name }}</h1>
     </body>
 </html>
