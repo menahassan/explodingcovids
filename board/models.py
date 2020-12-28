@@ -11,16 +11,35 @@ class Card:
 
     def getValue(self):
         return self.value
-    
+
+class InfluentialFigureCard(Card):
+    def __init__(self,value=0,played=False):
+        super().__init__(value,played)
+
+class SuperspreaderEventCard(Card):
+    def __init__(self,value=0,played=False):
+        super().__init__(value,played)
+
 class Deck:
-    cardTypes = {"covid exposure":4,"mask/ppe":6,"stay at home":5,"superspreader":4,
-    "quarantine":4, "stimulus check":4,"event cancellation":4,"covid forecast":5,
-    "trump":4,"fauci":4,"NFL":4,"pfizer":4,"zoom":4}
+    cardTypes = {"covid exposure":4,"mask/ppe":6,"stay at home":5,
+    "quarantine":4, "stimulus check":4,"event cancellation":4,"covid forecast":5,}
+    influentialFigureCards = {"trump":4,"fauci":4, "NFL":4,"pfizer":4,"zoom":4}
+    superspreaderCards = {"football game":1,"cruise":1,"birthday party":1,"concert":1}
     def __init__(self):
         self.cards = []
         for key in self.cardTypes:
             for numCards in range(self.cardTypes[key]):
                 card = Card(key,False)
+                self.cards.append(card)
+        
+        for key in self.influentialFigureCards:
+            for numCards in range(self.influentialFigureCards[key]):
+                card = InfluentialFigureCard(key,False)
+                self.cards.append(card)
+        
+        for key in self.superspreaderCards:
+            for numCards in range(self.superspreaderCards[key]):
+                card = SuperspreaderEventCard(key,False)
                 self.cards.append(card)
         self.shuffle()
 
@@ -47,7 +66,7 @@ class Deck:
         return(deckList)
 
 #can make this take a parameter of player
-class Hand():
+class Hand(Deck):
     def __init__(self,name=''):
         self.cards = []
         self.name = name
