@@ -22,8 +22,18 @@ class Deck:
             for numCards in range(self.cardTypes[key]):
                 card = Card(key,False)
                 self.cards.append(card)
-        #self.shuffle()
+        self.shuffle()
+
+    def add_card(self,card):
+        self.cards.append(card)
+
+    def remove_card(self,i=-1):
+        return self.cards.pop(i)
+
+    def shuffle(self):
+        random.shuffle(self.cards)
     
+    #get properties of the deck
     def getDeckLength(self):
         return len(self.cards)
     
@@ -35,3 +45,26 @@ class Deck:
         for card in self.cards:
             deckList.append(card.getValue())
         return(deckList)
+
+#can make this take a parameter of player
+class Hand():
+    def __init__(self,name=''):
+        self.cards = []
+        self.name = name
+
+    def add_card(self,card):
+        self.cards.append(card)
+
+    def remove_card(self,i=-1):
+        return self.cards.pop(i)
+
+    def getCards(self):
+        handList = []
+        for card in self.cards:
+            handList.append(card.getValue())
+        return(handList)
+
+    def getlabel(self):
+        #when we create a Player, we can make name an attribute of player instead
+        return self.name
+
