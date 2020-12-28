@@ -7,8 +7,9 @@
     </head>
     <body>
         <h1>Board</h1>
+        <h1>{{ deckLen }}</h1>
         <ul>
-            {% for card in cards %}
+            {% for card in deckList %}
                 <li>{{ card }}</li>
             {% endfor %}
         </ul>
