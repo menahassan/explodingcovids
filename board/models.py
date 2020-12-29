@@ -46,7 +46,7 @@ class Deck:
     def add_card(self,card):
         self.cards.append(card)
 
-    def remove_card(self,i=-1):
+    def remove_card(self,i=0):
         return self.cards.pop(i)
 
     def shuffle(self):
