@@ -67,14 +67,13 @@ class Deck:
 
 #can make this take a parameter of player
 class Hand(Deck):
-    def __init__(self,name=''):
+    def __init__(self):
         self.cards = []
-        self.name = name
 
     def add_card(self,card):
         self.cards.append(card)
 
-    def remove_card(self,i=-1):
+    def remove_card(self,i=0):
         return self.cards.pop(i)
 
     def getCards(self):
@@ -83,7 +82,37 @@ class Hand(Deck):
             handList.append(card.getValue())
         return(handList)
 
-    def getlabel(self):
-        #when we create a Player, we can make name an attribute of player instead
-        return self.name
+class DiscardPile(Deck):
+    def __init__(self):
+        self.cards = []
+    
+    def add_card(self,card):
+        self.cards.append(card)
 
+    def remove_card(self,i=0):
+        return self.cards.pop(i)
+
+    def getDiscardDeckLength(self):
+        return len(self.cards)
+
+    def getCards(self):
+        discardList = []
+        for card in self.cards:
+            discardList.append(card.getValue())
+        return(discardList)
+    
+
+class Player:
+    def __init__(self,name='',turn):
+        self.hand = Hand()
+        self.name = name
+        self.turn = turn
+
+    def is_player_turn(self):
+        return self.turn
+
+    def getName(self):
+        return self.name
+    
+    def getHand(self):
+        return self.hand
