@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Loading Page</title>
+        <link href="{% static 'loading/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Loading Page</h2>
+        <h2>Players</h2>
+        <h2>Name: {{ player1Name }}</h2>
+        <div class="btn-box">
+            <a href="{% url 'board:index' %}">
+                <p class="btn-text">Next</p>
+            </a>
+        </div>
+    </body>
+</html>

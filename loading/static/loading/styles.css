@@ -1,0 +1,21 @@
+.btn-box{
+    background-color: #9ac9f5;
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+.btn-text{
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin-top:5px;
+}
+
+a:link{
+    text-decoration: none;
+}

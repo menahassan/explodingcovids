@@ -6,15 +6,14 @@
         <link href="{% static 'board/styles.css' %}" rel="stylesheet">
     </head>
     <body>
-        <h1>Cards in Deck</h1>
-        <h1>{{ deckLen }}</h1>
+        <h2>Cards in Deck: {{ deckLen }}</h2>
         <ul>
             {% for card in deckList %}
                 <li>{{ card }}</li>
             {% endfor %}
         </ul>
-        <h1>Cards in Hand</h1>
-        <h1>{{ player1Name }}</h1>
+        <h2>Cards in Hand</h2>
+        <h2>Name: {{ player1Name }}</h2>
         <ul>
             {% for handCard in handCards %}
                 <li>{{ handCard }}</li>
