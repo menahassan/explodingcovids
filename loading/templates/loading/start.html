@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Loading Page: Start</title>
+        <link href="{% static 'loading/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Loading Page</h2>
+        <h2>Players:</h2>
+        <ul>
+            {% for name in names %}
+                <li>{{ name }}</li>
+            {% endfor %}
+        </ul>
+        <div class="btn-box">
+            <a href="{% url 'board:index' %}">
+                <p class="btn-text">Start Game</p>
+            </a>
+        </div>
+    </body>
+</html>

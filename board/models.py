@@ -103,8 +103,8 @@ class DiscardPile(Deck):
     
 
 class Player:
-    def __init__(self,turn,name=''):
-        self.hand = Hand()
+    def __init__(self,turn,hand,name=''):
+        self.hand = hand
         self.name = name
         self.turn = turn
 
