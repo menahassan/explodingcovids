@@ -17,7 +17,7 @@ class CreateGameView(View):
 
         for i in range(7):
             hand1.add_card(deck.remove_card())
-        handCards = hand1.getCards()
+        handCards = hand1.listDeck()
 
         deckLen = deck.getDeckLength()
         deckList = deck.listDeck()

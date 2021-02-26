@@ -3,7 +3,6 @@ import random
 import sys
 
 class Card:
-
     def __init__(self,value=0,played=False):
         #Default constructor
         self.value = value
@@ -12,11 +11,11 @@ class Card:
     def getValue(self):
         return self.value
 
-class InfluentialFigureCard(Card):
+class InfluentialFigure(Card):
     def __init__(self,value=0,played=False):
         super().__init__(value,played)
 
-class SuperspreaderEventCard(Card):
+class SuperspreaderEvent(Card):
     def __init__(self,value=0,played=False):
         super().__init__(value,played)
 
@@ -34,12 +33,12 @@ class Deck:
         
         for key in self.influentialFigureCards:
             for numCards in range(self.influentialFigureCards[key]):
-                card = InfluentialFigureCard(key,False)
+                card = InfluentialFigure(key,False)
                 self.cards.append(card)
         
         for key in self.superspreaderCards:
             for numCards in range(self.superspreaderCards[key]):
-                card = SuperspreaderEventCard(key,False)
+                card = SuperspreaderEvent(key,False)
                 self.cards.append(card)
         self.shuffle()
 
@@ -70,36 +69,9 @@ class Hand(Deck):
     def __init__(self):
         self.cards = []
 
-    def add_card(self,card):
-        self.cards.append(card)
-
-    def remove_card(self,i=0):
-        return self.cards.pop(i)
-
-    def getCards(self):
-        handList = []
-        for card in self.cards:
-            handList.append(card.getValue())
-        return(handList)
-
 class DiscardPile(Deck):
     def __init__(self):
         self.cards = []
-    
-    def add_card(self,card):
-        self.cards.append(card)
-
-    def remove_card(self,i=0):
-        return self.cards.pop(i)
-
-    def getDiscardDeckLength(self):
-        return len(self.cards)
-
-    def getCards(self):
-        discardList = []
-        for card in self.cards:
-            discardList.append(card.getValue())
-        return(discardList)
     
 
 class Player:

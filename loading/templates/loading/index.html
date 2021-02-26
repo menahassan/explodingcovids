@@ -8,11 +8,16 @@
     <body>
         <h2>Loading Page</h2>
         <h2>Players</h2>
+
         <h2>Name: {{ player1Name }}</h2>
-        <div class="btn-box">
-            <a href="{% url 'board:index' %}">
-                <p class="btn-text">Next</p>
-            </a>
-        </div>
+
+        <form>
+            <input type="text" id="Player" name="Player"><br>
+        </form>
+
+        <form action="{% url 'board:index' %}">
+            <input type="submit" id="Steve" value="OK"><br>
+        </form>
+
     </body>
 </html>
