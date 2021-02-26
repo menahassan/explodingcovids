@@ -9,6 +9,11 @@
         <h2>Loading Page</h2>
         <h2>Players</h2>
         <h2>Name: {{ player1Name }}</h2>
+        <form action="/board/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
         <div class="btn-box">
             <a href="{% url 'board:index' %}">
                 <p class="btn-text">Next</p>
