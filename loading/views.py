@@ -11,6 +11,8 @@ class NewTaskForm(forms.Form):
 
 class LoadGameView(View):
     def get(self,request,*args, **kwargs):
+        #saves past sessions (past names created)
+        #comment out the line below to refresh the names list
         if "names" not in request.session:
             request.session["names"] = []
         return render(request,'loading/index.html',{
